@@ -33,4 +33,9 @@ public class Posts {
         this.content = content;
         this.author = author;
     }
+
+    public void update(final String title, final String content) {
+        this.title = title;
+        this.content = content;
+    }
 }

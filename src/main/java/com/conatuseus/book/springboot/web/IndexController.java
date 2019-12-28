@@ -1,5 +1,6 @@
 package com.conatuseus.book.springboot.web;
 
+import com.conatuseus.book.springboot.config.auth.LoginUser;
 import com.conatuseus.book.springboot.config.auth.dto.SessionUser;
 import com.conatuseus.book.springboot.service.posts.PostsService;
 import com.conatuseus.book.springboot.web.dto.PostsResponseDto;
@@ -19,10 +20,9 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(final Model model, @LoginUser final SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
@@ -35,7 +35,7 @@ public class IndexController {
     }
 
     @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable final Long id, Model model) {
+    public String postsUpdate(@PathVariable final Long id, final Model model) {
         PostsResponseDto dto = postsService.findById(id);
         model.addAttribute("post", dto);
 

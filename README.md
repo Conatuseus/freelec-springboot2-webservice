@@ -215,3 +215,51 @@ Hostname이 등록되었다면 한 가지 작업을 더 해야합니다.
 
 > curl 등록한 호스트 이름
 
+
+
+## EC2 서버에 프로젝트를 배포해보자
+
+### EC2에 프로젝트 Clone 받기
+
+먼저 EC2에 깃을 설치하겠습니다.
+
+EC2로 접속해서 아래 명령어 실행
+
+> sudo yum install git
+
+설치가 완료되면 설치 상태를 확인합니다.
+
+> git --version
+
+git이 성공적으로 설치되면 git clone으로 프로젝트를 저장할 디렉토리를 생성
+
+> mkdir ~/app && mkdir ~/app/step1
+
+생성된 디렉토리로 이동
+
+> cd ~/app/step1
+
+본인의 깃허브 웹페이지에서 https 주소를 복사합니다.
+
+복사한 주소를 통해 git clone을 진행
+
+> git clone 복사한주소
+
+클론이 끝났으면 클론된 프로젝트로 이동해서 파일들이 잘 복사 되었는지 확인합니다.
+
+> cd 프로젝트명
+>
+> ll
+
+그리고 코드들이 잘 수행되는지 테스트로 검증하겠습니다.
+
+> ./gradlew test
+
+만약 다음과 같이 gradlew 실행 권한이 없다는 메시지가 뜬다면
+
+> -bash: ./gradlew: Permission denied
+
+다음 명령어로 실행 권한을 추가한 뒤 다시 테스트를 수행합니다
+
+> chmod +x ./gradlew
+

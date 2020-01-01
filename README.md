@@ -4,6 +4,19 @@
 
 이동욱님의 <스프링 부트와 AWS로 혼자 구현하는 웹 서비스>를 읽고 따라해보며 배운 내용을 정리하는 공간입니다.
 
+## Environment
+
+- Java: JDK 1.8
+
+- Springboot 2.1.7.RELEASE
+- mariaDB
+- Spring Data JPA
+- AWS EC2
+
+- AWS RDS
+
+
+
 ## 정리한 내용
 
 - [gradle 프로젝트를 스프링 부트 프로젝트로 변경하기](https://github.com/Conatuseus/TIL/blob/master/Spring/%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%A4%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%A5%BC%20%EC%8A%A4%ED%94%84%EB%A7%81%20%EB%B6%80%ED%8A%B8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%A1%9C%20%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0.md)

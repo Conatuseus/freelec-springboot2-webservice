@@ -297,3 +297,19 @@ git이 성공적으로 설치되면 git clone으로 프로젝트를 저장할 �
 
 여기서 특히 중요한 것은 **테스트 자동화** 입니다. 지속적으로 통합하기 위해서는 무엇보다 이 프로젝트가 **완전한 상태임을 보장**하기 위해 테스트 코드가 구현되어 있어야만 합니다.
 
+
+
+
+
+### CodeDeploy 로그 확인
+
+CodeDeploy와 같이 AWS가 지원하는 서비스에서는 오류가 발생했을 때 로그 찾는 방법을 모르면 오류를 해결하기가 어렵습니다. 그래서 배포가 실패하면 어느 로그를 봐야 할지 간단하게 소개합니다.
+
+CodeDeploy에 관한 대부분 내용은 `/opt/codedeploy-agent/deployment-root` 에 있습니다. 
+
+`/opt/codedeploy-agent/deployment-root/deployment-logs/codedeploy-agent-deployments.log`
+
+- CodeDeploy 로그 파일입니다.
+- CodeDeploy로 이루어지는 배포 내용 중 표준 입/출력 내용은 모두 여기에 담겨 있습니다.
+- 작성한 echo 내용도 모두 표기됩니다.
+
